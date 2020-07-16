@@ -1,0 +1,71 @@
+#N canvas 1912 -8 1920 1037 10;
+#X obj 97 139 sampler;
+#X text 4 28 clock l r sound;
+#X obj 85 566 dac~;
+#X obj 279 171 sequencer;
+#X obj 25 240 s clock;
+#X obj 286 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 97 10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X text 39 4 on off;
+#X text 306 21 load track 1;
+#X obj 448 670 s bd_values;
+#X obj 461 647 s snare_values;
+#X obj 474 625 s hat_values;
+#X obj 487 602 s crash_values;
+#X obj 448 569 stepseq;
+#X obj 115 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 135 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 154 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 715 560 notein, f 20;
+#X obj 279 62 ctlin 21;
+#X obj 270 109 * 18000;
+#X obj 279 83 / 127;
+#X obj 270 130 + 100;
+#X obj 86 502 lop~;
+#X obj 190 270 vsl 15 128 50 18000 1 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 5074 1;
+#X obj 172 524 lop~;
+#X obj 187 160 loadbang;
+#X msg 187 184 18000;
+#X text 842 560 buttons 36 37 38 \, bei 127 = press;
+#X obj 714 605 stripnote;
+#X obj 700 649 route 36 37 38;
+#X obj 231 499 *~ 0.6;
+#X obj 288 499 *~ 0.6;
+#X connect 0 0 4 0;
+#X connect 0 1 22 0;
+#X connect 0 2 24 0;
+#X connect 3 0 30 0;
+#X connect 3 1 31 0;
+#X connect 5 0 0 4;
+#X connect 6 0 0 0;
+#X connect 13 0 9 0;
+#X connect 13 1 10 0;
+#X connect 13 2 11 0;
+#X connect 13 3 12 0;
+#X connect 14 0 0 1;
+#X connect 15 0 0 2;
+#X connect 16 0 0 3;
+#X connect 17 0 28 0;
+#X connect 17 1 28 1;
+#X connect 18 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 23 0;
+#X connect 22 0 2 0;
+#X connect 23 0 22 1;
+#X connect 23 0 24 1;
+#X connect 24 0 2 1;
+#X connect 25 0 26 0;
+#X connect 26 0 23 0;
+#X connect 28 0 29 0;
+#X connect 29 0 14 0;
+#X connect 29 1 15 0;
+#X connect 29 2 16 0;
+#X connect 30 0 22 0;
+#X connect 31 0 24 0;
